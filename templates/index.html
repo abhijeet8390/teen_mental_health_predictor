@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teen Depression Predictor</title>
+</head>
+<body>
+
+    <h1>Teen Depression Predictor</h1>
+
+    <form action="/predict" method="POST">
+
+        Age: <input type="number" name="age"> <br><br>
+
+        Gender:
+        <select name="gender">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select> <br><br>
+
+        Daily Social Media Hours: <input type="number" name="daily_social_media_hours" step="0.1"> <br><br>
+
+        Sleep Hours: <input type="number" name="sleep_hours" step="0.1"> <br><br>
+
+        Screen Time Before Sleep: <input type="number" name="screen_time_before_sleep" step="0.1"> <br><br>
+
+        Academic Performance (GPA): <input type="number" name="academic_performance" step="0.01"> <br><br>
+
+        Physical Activity (hrs): <input type="number" name="physical_activity" step="0.1"> <br><br>
+
+        Social Interaction Level:
+        <select name="social_interaction_level">
+            <option value="0">Low</option>
+            <option value="1">Medium</option>
+            <option value="2">High</option>
+        </select> <br><br>
+
+        Stress Level (0-10): <input type="number" name="stress_level"> <br><br>
+
+        Anxiety Level (0-10): <input type="number" name="anxiety_level"> <br><br>
+
+        Addiction Level (0-10): <input type="number" name="addiction_level"> <br><br>
+
+        Platform:
+        <select name="platform_usage">
+            <option value="instagram">Instagram</option>
+            <option value="tiktok">TikTok</option>
+            <option value="both">Both</option>
+        </select> <br><br>
+
+        <input type="submit" value="Predict">
+
+    </form>
+
+    <!-- Show Result -->
+    {% if prediction is defined %}
+        <h2>Result: {{ prediction }}</h2>
+    {% endif %}
+
+</body>
+</html>
